@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <!-- Theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.min.css"
+    />
+    <style>
+        body {
+            background-color: #444;
+            color: #eee;
+        }
+
+        .container {
+            margin: 15% auto;
+            padding: 4em;
+            border-radius: 1em;
+            background-color: #666;
+        }
+
+        a {
+            color: #eee;
+            background-color: #777;
+            border-radius: 1em;
+            padding: 1em 2em;
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+        }
+
+        a:hover {
+            color: #eee;
+            text-decoration: none;
+        }
+    </style>
+
+<script>
+    function searchMDN() {
+        window.location = "https://developer.mozilla.org/en-US/search?q=" + encodeURIComponent($("#query").val());
+    }
+    function searchStackOverflow() {
+        window.location = "https://stackoverflow.com/search?q=" + encodeURIComponent($("#query").val());
+    }
+    function searchGithub() {
+        window.location = "https://github.com/search?q=" + encodeURIComponent($("#query").val());
+    }
+</script>
+
+    <title>Welcome Professor</title>
+</head>
+
+<body>
+    <div class="container col-xs-6">
+        <form id="search" class="form" action="https://google.com/search">
+            <div class="input-group">
+                <input type="text" id="query" class="form-control" name="q" autofocus>
+                <div class="input-group-btn">
+                    <input type="button" class="btn btn-default" value="G" onclick="searchGithub();"></div>
+                <div class="input-group-btn">
+                    <input type="button" class="btn btn-default" value="M" onclick="searchMDN();"></div>
+                <div class="input-group-btn">
+                    <input type="button" class="btn btn-default" value="S" onclick="searchStackOverflow();"></div>
+            </div>
+        </form>
+        <a href="https://reddit.com/r/all/top?t=hour">r/all/top/hour</a>
+        <a href="https://reddit.com/r/all/hot">r/all/hot</a>
+        <a href="https://hackaday.com">hackaday</a>
+    </div>
+</body>
+
+</html>
