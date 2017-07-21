@@ -42,25 +42,37 @@
             color: #eee;
             text-decoration: none;
         }
+
+        #time {
+            font-size: 4em;
+            text-align: center;
+        }
     </style>
 
-<script>
-    function searchMDN() {
-        window.location = "https://developer.mozilla.org/en-US/search?q=" + encodeURIComponent($("#query").val());
-    }
-    function searchStackOverflow() {
-        window.location = "https://stackoverflow.com/search?q=" + encodeURIComponent($("#query").val());
-    }
-    function searchGithub() {
-        window.location = "https://github.com/search?q=" + encodeURIComponent($("#query").val());
-    }
-</script>
+    <script>
+        function searchMDN() {
+            window.location = "https://developer.mozilla.org/en-US/search?q=" + encodeURIComponent($("#query").val());
+        }
+        function searchStackOverflow() {
+            window.location = "https://stackoverflow.com/search?q=" + encodeURIComponent($("#query").val());
+        }
+        function searchGithub() {
+            window.location = "https://github.com/search?q=" + encodeURIComponent($("#query").val());
+        }
+
+        setInterval(() => {
+
+            $("#time").text(new Date().toLocaleString());
+        }, 1000);
+    </script>
 
     <title>Welcome Professor</title>
 </head>
 
 <body>
     <div class="container col-xs-6">
+        <p id="time">
+        </p>
         <form id="search" class="form" action="https://google.com/search">
             <div class="input-group">
                 <input type="text" id="query" class="form-control" name="q" autofocus>
