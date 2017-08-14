@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>Decolonize</title>
+    <script>
+        window.addEventListener('load', () => {
+            var form = document.getElementsByTagName('form')[0];
+            var ta = document.getElementsByTagName('textarea')[0];
+            var sb = document.getElementsByTagName('input')[0];
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                var spell = ta.value;
+                spell = spell.replace(/\d*:/g, '');
+                ta.value = spell;
+                ta.select();
+                if (document.execCommand('copy')) {
+                    sb.value = 'Copied!';
+                    ta.value = '';
+                    window.setTimeout(() => sb.value = "Convert", 1000);
+                }
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <form>
+        <textarea></textarea>
+        <input type="submit">
+    </form>
+</body>
+
+</html>
